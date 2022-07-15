@@ -15,7 +15,17 @@ public class QueryProcessor {
            return "alissa";
         } else if(query.contains("plus")) {
             String[] arr = query.toString().split("\\s+");
-            return arr[2] + arr [4];
+            return String.valueOf(Integer.parseInt(arr[2])+ Integer.parseInt(arr [4]));
+        } else if(query.contains("number is the largest")) {
+            String[] arr = query.toString().split(":");
+            String[] num = arr[1].split(", ");
+            int biggest = Integer.parseInt(arr[0]);
+            for(int i = 1; i < num.length - 1; i++) {
+                if(biggest < Integer.parseInt(arr[i])) {
+                    biggest = Integer.parseInt(arr[i]);
+                }
+            }
+            return String.valueOf(biggest);
         }
         else {
             return "";
