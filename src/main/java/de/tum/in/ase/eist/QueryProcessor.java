@@ -13,9 +13,11 @@ public class QueryProcessor {
                     "writer in the English language and the world's pre-eminent dramatist.";
         } else if (query.contains("name")) {
            return "alissa";
+
         } else if(query.contains("plus")) {
-            String[] arr = query.toString().split("\\s+");
-            return String.valueOf(Integer.parseInt(arr[2])+ Integer.parseInt(arr [4]));
+            String[] arr = query.split("\\s+");
+            return String.valueOf(Integer.parseInt(arr[arr.length - 3])+ Integer.parseInt(arr [arr.length-1]));
+
         } else if(query.contains("number is the largest")) {
             String[] arr = query.toString().split(":");
             String[] num = arr[1].split(", ");
